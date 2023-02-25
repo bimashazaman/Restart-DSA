@@ -11,7 +11,7 @@ void fun(int A[], int n)
 }
 
 int main () {
-
+    
     int A[] = {2,3,566,4};
     int n = 5;
 
