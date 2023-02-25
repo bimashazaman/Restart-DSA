@@ -4,12 +4,11 @@
 
 using namespace std; 
 
-void fun(int *A, int n)
+void fun(int A[], int n)
 {
     // we cant use any foreach loop on pointer but we can use for loop
     return;
 }
-
 
 int main () {
 
