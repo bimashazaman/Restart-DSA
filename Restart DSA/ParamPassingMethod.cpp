@@ -11,13 +11,12 @@ void func1(int *x, int *y) {
     temp = *x;
     *x = *y;
     *y = temp;
-
 };
 
 int main() {
     int x = 10;
     int y = 20;
-    
+
    func1(&x, &y);
 
     cout<<x;
