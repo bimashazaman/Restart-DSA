@@ -4,8 +4,6 @@
 
 using namespace std; 
 
-
-
 int main() {
    /* Allocating memory for 5 integers. */
     int *p;
@@ -20,4 +18,8 @@ int main() {
 /* Printing the values of the array. */
      for(int i= 0; i<5; i++)
         cout<<p[i]<<endl;
+
+       /* Deleting the array. */
+        free(p);
+   return 0;
 }
