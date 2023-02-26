@@ -2,16 +2,17 @@
 #include <iostream>
 #include <stdlib.h>
 
-using namespace std; 
+using namespace std;
 
-int main() {
+int main()
+{
 
     int a = 100;
 
     /* Creating a reference to a. */
     int &r = a;
 
-    cout<<r<<endl;
+    cout << r << endl;
 
     return 0;
 }

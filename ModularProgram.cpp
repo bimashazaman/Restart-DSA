@@ -4,20 +4,22 @@
 
 using namespace std;
 
-int area(int l, int b) {
+int area(int l, int b)
+{
     return l * b;
 }
 
-int main() {
+int main()
+{
     int length = 0, breadth = 0;
 
     printf("Enter Length and Breath: ");
 
-    cin>>length>>breadth;
+    cin >> length >> breadth;
 
     int c = area(length, breadth);
 
-    cout<<c;
+    cout << c;
 
     return 0;
 }

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdlib.h>
 
-using namespace std; 
+using namespace std;
 
 void fun(int A[], int n)
 {
@@ -10,13 +10,15 @@ void fun(int A[], int n)
     return;
 }
 
-int main () {
-    
-    int A[] = {2,3,566,4};
+int main()
+{
+
+    int A[] = {2, 3, 566, 4};
     int n = 5;
 
-    for(int x:A) {
-        cout<<x<<endl;
+    for (int x : A)
+    {
+        cout << x << endl;
     }
     return 0;
 }

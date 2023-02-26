@@ -4,21 +4,24 @@
 
 using namespace std;
 
-struct Rectangle {
+struct Rectangle
+{
     int len;
     int br;
 };
 
-int area(struct Rectangle r) {
+int area(struct Rectangle r)
+{
     return r.len * r.br;
 }
 
-int main() {
+int main()
+{
 
     Rectangle r = {4, 4};
 
     int a = area(r);
 
-    cout<<r.len<<r.br<<a;
+    cout << r.len << r.br << a;
     return 0;
 }
