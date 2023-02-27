@@ -24,7 +24,7 @@ int loopSum(int n)
         s = s + i;
     }
     return s;
-}
+} // better space complexity
 
 int main()
 {
