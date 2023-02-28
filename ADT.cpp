@@ -34,6 +34,26 @@ int binarySearch(struct Array arr, int key)
     return -1;
 }
 
+int Get(struct Array arr, int index)
+{
+    if (index >= 0 && index < arr.length)
+    {
+        return arr.A[index];
+    }
+
+    return -1;
+}
+
+int Set(struct Array *arr, int index, int x)
+{
+    if (index >= 0 && index < arr->length)
+    {
+        return arr->A[index] = x;
+    }
+
+    return -1;
+}
+
 int deleteAtGivenIndex(struct Array *arr, int givenIndex)
 {
     int x = 0, i;
