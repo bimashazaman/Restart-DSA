@@ -61,6 +61,25 @@ int Max(struct Array arr)
     }
 }
 
+int Sum(struct Array arr)
+{
+    int s = 0;
+    int i;
+
+    /* Returning the sum of the array. */
+    for (i = 0; i < arr.length; i++)
+    {
+        s += arr.A[i];
+    }
+
+    return s;
+}
+
+int Avg(struct Array arr)
+{
+    return Sum(arr) / arr.length;
+}
+
 int Set(struct Array *arr, int index, int x)
 {
     if (index >= 0 && index < arr->length)
