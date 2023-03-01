@@ -7,6 +7,39 @@ struct Array
     int length;
 };
 
+void Reverse(struct Array *arr)
+{
+    int *B;
+    int i, j;
+
+    B = new int[arr->length];
+
+    /* Reversing the array. */
+    for (i = arr->length - 1, j = 0; i >= 0; i--, j++)
+    {
+        B[j] = arr->A[i];
+    }
+
+    /* Copying the elements of B to the array A. */
+    for (i = 0; i < arr->length; i++)
+    {
+        arr->A[i] = B[i];
+    }
+}
+
+int ReverseUsingSwap(struct Array *arr)
+{
+    int i, j, temp;
+
+    /* Reversing the array. */
+    for (i = 0, j = arr->length - 1; i < j; i++, j--)
+    {
+        temp = arr->A[i];
+        arr->A[i] = arr->A[j];
+        arr->A[j] = temp;
+    }
+}
+
 int binarySearch(struct Array arr, int key)
 {
     int l, h, mid;
