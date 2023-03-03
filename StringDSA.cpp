@@ -167,5 +167,16 @@ int main()
 {
     string s = "madam";
     cout << validate(s) << endl;
+    cout << reverseString(s) << endl;
+    cout << reverseString2(s) << endl;
+    cout << reverseString3(s) << endl;
+    cout << length(s) << endl;
+    cout << changingCase(s) << endl;
+    cout << FindingDuplicate(s) << endl;
+    cout << FindingDuplicate2(s) << endl;
+    cout << FindingDuplicate3(s) << endl;
+    cout << FindingDuplicate4(s) << endl;
+    cout << palindrome(s) << endl;
+
     return 0;
 }
