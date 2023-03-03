@@ -23,6 +23,36 @@ int Get(struct Matrix m, int i, int j)
         return 0;
 }
 
+// lower triangular matrix
+
+void lowerTriangularMatrix()
+{
+    int A[10][10];
+    int i, j, x;
+    cout << "Enter the dimension of the matrix: ";
+    cin >> x;
+    cout << "Enter the elements of the matrix: " << endl;
+    for (i = 0; i < x; i++)
+    {
+        for (j = 0; j < x; j++)
+        {
+            cin >> A[i][j];
+        }
+    }
+    cout << "The lower triangular matrix is: " << endl;
+    for (i = 0; i < x; i++)
+    {
+        for (j = 0; j < x; j++)
+        {
+            if (i >= j)
+                cout << A[i][j] << " ";
+            else
+                cout << "0 ";
+        }
+        cout << endl;
+    }
+}
+
 void Display(struct Matrix m)
 {
     int i, j;
