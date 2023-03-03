@@ -25,6 +25,23 @@ void swap(char &a, char &b)
     b = temp;
 }
 
+int permute(string s1, string s2)
+{
+    int i, j;
+    int H[26] = {0};
+    for (i = 0; s1[i] != '\0'; i++)
+    {
+        H[s1[i] - 97]++;
+    }
+    for (i = 0; s2[i] != '\0'; i++)
+    {
+        H[s2[i] - 97]--;
+        if (H[s2[i] - 97] < 0)
+            return 0;
+    }
+    return 1;
+}
+
 int reverseString(string s)
 {
     int i = 0;
