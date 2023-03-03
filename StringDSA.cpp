@@ -38,6 +38,36 @@ int reverseString(string s)
     return 1;
 }
 
+int reverseString2(string s)
+{
+    int i = 0;
+    int j = s.length() - 1;
+    while (i < j)
+    {
+        char temp = s[i];
+        s[i] = s[j];
+        s[j] = temp;
+        i++;
+        j--;
+    }
+    return 1;
+}
+
+int reverseString3(string s)
+{
+    int i = 0;
+    int j = s.length() - 1;
+    while (i < j)
+    {
+        s[i] = s[i] + s[j];
+        s[j] = s[i] - s[j];
+        s[i] = s[i] - s[j];
+        i++;
+        j--;
+    }
+    return 1;
+}
+
 int length(string s)
 {
     int i = 0;
