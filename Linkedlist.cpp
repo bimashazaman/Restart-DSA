@@ -131,17 +131,17 @@ int Rmax(struct Node *p)
 
 struct Node *Lsearch(struct Node *p, int key)
 {
-    struct Node *q = NULL;
+    struct Node *temp = NULL;
     while (p != NULL)
     {
         if (key == p->data)
         {
-            q->next = p->next;
+            temp->next = p->next;
             p->next = first;
             first = p;
             return p;
         }
-        q = p;
+        temp = p;
         p = p->next;
     }
     return NULL;
@@ -160,6 +160,39 @@ struct Node *Rsearch(struct Node *p, int key)
     return Rsearch(p->next, key);
 }
 
+void insert(struct Node *p, int index, int x)
+{
+    struct Node *t;
+    int i;
+
+    /* Checking if the index is valid or not. */
+    if (index < 0 || index > count(p))
+    {
+        return;
+    }
+
+    /* Creating a new node and assigning the value of x to the data of the node. */
+    t = new Node;
+    t->data = x;
+
+    /* Inserting the node at the beginning of the linked list. */
+    if (index == 0)
+    {
+        t->next = first;
+        first = t;
+    }
+    else
+    {
+        /* Moving the pointer to the node before the index. */
+        for (i = 0; i < index - 1; i++)
+        {
+            p = p->next;
+        }
+        /* Inserting a node after a given node. */
+        t->next = p->next;
+        p->next = t;
+    }
+}
 int main()
 {
 
