@@ -3,7 +3,6 @@ using namespace std;
 
 class Stack
 {
-    /* Declaring the variables that will be used in the class. */
 private:
     int size;
     int top;
@@ -21,11 +20,6 @@ public:
     int stackTop();
 };
 
-/**
- * The constructor initializes the stack with a size and sets the top to -1.
- *
- * @param size The size of the stack.
- */
 Stack::Stack(int size)
 {
     this->size = size;
@@ -33,9 +27,6 @@ Stack::Stack(int size)
     S = new int[size];
 }
 
-/**
- * The destructor frees the memory allocated for the stack
- */
 Stack::~Stack()
 {
     delete[] S;
@@ -72,14 +63,12 @@ int Stack::pop()
 int Stack::peek(int index)
 {
     int x = -1;
-    /* Checking if the index is valid. */
     if (top - index + 1 < 0 || top - index + 1 == size)
     {
         cout << "Invalid position!" << endl;
     }
     else
     {
-        /* Getting the element at the index from the top of the stack. */
         x = S[top - index + 1];
     }
     return x;
