@@ -20,6 +20,7 @@ public:
     Node *getRoot() { return root; }
     void Insert(int key);
     void Inorder(Node *p);
+    void Delete(int key);
     Node *Search(int key);
 };
 
@@ -73,14 +74,98 @@ void BST::Insert(int key) // Insert a node in BST
         r->rchild = p; // set r's right child to p
     }
 }
+// delete
+void BST::Delete(int key)
+{
+    Node *p = root;
+    Node *q = nullptr;
+    while (p != nullptr)
+    {
+        if (p->data == key)
+        {
+            break;
+        }
+        q = p;
+        if (key < p->data)
+        {
+            p = p->lchild;
+        }
+        else
+        {
+            p = p->rchild;
+        }
+    }
+    if (p == nullptr)
+    {
+        return;
+    }
+    if (p->lchild == nullptr && p->rchild == nullptr)
+    {
+        if (p == root)
+        {
+            root = nullptr;
+        }
+        else if (p == q->lchild)
+        {
+            q->lchild = nullptr;
+        }
+        else
+        {
+            q->rchild = nullptr;
+        }
+        delete p;
+    }
+    else if (p->lchild == nullptr && p->rchild != nullptr)
+    {
+        if (p == root)
+        {
+            root = p->rchild;
+        }
+        else if (p == q->lchild)
+        {
+            q->lchild = p->rchild;
+        }
+        else
+        {
+            q->rchild = p->rchild;
+        }
+        delete p;
+    }
+    else if (p->lchild != nullptr && p->rchild == nullptr)
+    {
+        if (p == root)
+        {
+            root = p->lchild;
+        }
+        else if (p == q->lchild)
+        {
+            q->lchild = p->lchild;
+        }
+        else
+        {
+            q->rchild = p->lchild;
+        }
+        delete p;
+    }
+    else
+    {
+        Node *r = p->lchild;
+        while (r->rchild != nullptr)
+        {
+            r = r->rchild;
+        }
+        p->data = r->data;
+        Delete(r->data);
+    }
+}
 
 void BST::Inorder(Node *p)
 {
     if (p)
     {
-        Inorder(p->lchild);
-        cout << p->data << ", " << flush;
-        Inorder(p->rchild);
+        Inorder(p->lchild);               // left
+        cout << p->data << ", " << flush; // root
+        Inorder(p->rchild);               // right
     }
 }
 
